@@ -1,0 +1,65 @@
+body{
+    background-color: yellow;
+    /* background-image: url(""); */
+}
+#center{
+    border: 2px dotted black;
+    background-color: aqua;
+    padding:  10px 10px 10px 10px;
+}
+#container1{
+    padding:  10px  10px  10px  10px;
+    border: 5px dashed rgb(243, 11, 11);
+}
+
+    
+
+#signupemail , #signuppassword{
+    margin:  10px  10px  10px  10px;
+    padding:  10px  10px  10px  10px;
+
+    width: 200px;
+    height: 50px;
+    border-radius: 300px;
+    font-weight: bold;
+
+}
+#signupbtn{
+    margin:  10px  10px  10px  10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 200px;
+    font-weight: bold;
+    background-color: yellow;
+}
+#signinemail , #signinpassword{
+    margin:  10px  10px  10px  10px;
+    padding:  10px  10px  10px  10px;
+
+    width: 200px;
+    height: 50px;
+    border-radius: 300px;
+    font-weight: bold;
+}
+#signinbtn{
+    margin:  10px  10px  10px  10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 200px;
+    font-weight: bold;
+    background-color: yellow;}
+    #container2{
+    padding:  10px  10px  10px  10px;
+
+    border: 5px dashed rgb(243, 11, 11);
+
+    }
+    #btnlogout{
+    padding:  10px  10px  10px  10px;
+    margin:  10px  10px  10px  10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 200px;
+    font-weight: bold;
+    background-color: yellow;}
+    
