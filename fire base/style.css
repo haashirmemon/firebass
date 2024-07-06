@@ -3,13 +3,13 @@ body{
     /* background-image: url(""); */
 }
 #center{
-    border: 2px dotted black;
+    /* border: 2px dotted black; */
     background-color: aqua;
     padding:  10px 10px 10px 10px;
 }
 #container1{
     padding:  10px  10px  10px  10px;
-    border: 5px dashed rgb(243, 11, 11);
+    /* border: 5px dashed rgb(243, 11, 11); */
 }
 
     
@@ -51,7 +51,7 @@ body{
     #container2{
     padding:  10px  10px  10px  10px;
 
-    border: 5px dashed rgb(243, 11, 11);
+    /* border: 5px dashed rgb(243, 11, 11); */
 
     }
     #btnlogout{
