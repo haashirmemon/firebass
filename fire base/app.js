@@ -18,6 +18,7 @@
      "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
 
+
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -71,6 +72,9 @@ const allusersdiv = document.getElementById("allusers");
       usercontainer.style.display="block"
       useremail.innerText = user.email
       console.log("user is logged  inn");
+      getallusers()
+
+     
 
       // ...
     } else {
@@ -92,6 +96,9 @@ const allusersdiv = document.getElementById("allusers");
       // Signed up 
       const user = userCredential.user;
       console.log(user);
+      adddata(signupemail.value,signuppassword.value)
+
+
       // ...
     })
     .catch((error) => {
@@ -117,7 +124,7 @@ const allusersdiv = document.getElementById("allusers");
       alert(errorMessage)
     });
   }
-  function logout() {
+  function logout(){
   
 
     signOut(auth).then(() => {
@@ -130,14 +137,16 @@ const allusersdiv = document.getElementById("allusers");
   const db = getFirestore(app)
   console.log(db);
 
-  // const myobj ={
-  //   name:'haashir',
-  //   age:18,
-  //   country:'pakistan',
-  //   hobbies:['coding'],
-  //   teacher:{name:'Sir bilal'}
-  // }
- async function adddata(email,password) {
+  const myobj ={
+    name:'haashir',
+    age:18,
+    country:'pakistan',
+    hobbies:['coding'],
+    teacher:{name:'Sir bilal'}
+  }
+
+ 
+   async function adddata(email,password) {
   try {
     const userref = await addDoc(collection(db, "users"), {
       email:email,
@@ -153,16 +162,70 @@ const allusersdiv = document.getElementById("allusers");
 //  adddata()
   
  async function getallusers(){
-  const usercollection =collection(db,"allusers")
+  const usercollection = collection(db,"allusers")
   const querySnapshot = await getDocs(collection(db, "users"));
   allusersdiv.innerText+=""
 querySnapshot.forEach((doc) => {
   console.log(`${doc.id} => ${doc.data().email}`);
-  var addusers = `<div id=${user.id}>
-  <p>${user.data().email}</p>
-  <p>${user.data().password}</p>
+  var addusers = `<div id=${doc.id}>
+  <p>${doc.data().email}</p>
+  <p>${doc.data().password}</p>
   </div>`;
   allusersdiv.innerHTML+=addusers
 });
  }
-//  getallusers()
+// console.log('bhai ye wal amene kara hai q k me sdendkv',getallusers);
+
+// let tododiv = document.getElementById("div1")
+
+// var maindiv = document.getElementsByClassName("")
+// var maindiv = document.getElementsByClassName("container")
+var button = document.getElementById("addbtn")
+var historydiv = document.getElementById("historydiv")
+var input = document.getElementById("todo")
+let parent = document.getElementById("parent")
+let div1 = document.getElementById("div1")
+var card = document.getElementById("card")
+var description =document.getElementById("description")
+var category = document.getElementById("category")
+
+button.addEventListener("click",function () {
+    if (input.value.trim() === "") {
+        return alert("please add todo")
+    }
+var now = new Date()
+var time = now.toLocaleTimeString()
+// var li = `<li>${input.value.trim()} ${time} <button  id="delete" onclick="console.log("this.parentnode.remove())">delete</button></li>`
+
+
+
+
+ var li = `  <li id="li">
+ <div id="div1">
+ <div id="card" style="width: 18rem;">
+
+  <img src="download (1).jpeg" class="card-img-top" alt="..." id="image">
+  <div class="card-body"> CATEGORY   ${category.value}
+    <h5 class="card-title"> TODO VALUE ${todo.value.trim()} </h5>
+    <p class="card-text">DESCRIPTION   ${description.value}</p>
+    <a href="#" class="btn btn-primary">${time} </a>
+  </div>
+ </div>
+</div>
+ 
+ 
+ </li>
+ 
+  ` 
+         
+
+
+historydiv.innerHTML += li
+
+// historydiv.innerHTML += li 
+
+todo.value = ''
+
+})
+
+// <button  id="delete"  onclick = "console.log(li.remove())">Del </button>
