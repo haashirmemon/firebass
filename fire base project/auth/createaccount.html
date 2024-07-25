@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Authentication Example</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="container">
+ 
+
+   <br><br>
+   <div class="login-box" id="signin">
+ 
+    <form>
+      <div class="user-box">
+        <input type="Email" name=""  id="signinemail" required>
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input type="Password" id="signinpassword" name="" required="">
+        <label>Password</label>
+      </div><center>
+      <a href="#" id="signinBtn">
+             Sign in
+         <span></span>
+         
+         <!-- <button><span>Do You Have an Account?</span>Create Account</button> -->
+      </a>
+         <button class="button" id="goToCreateAccount">
+          <div class="button-overlay"></div>
+          <span>Do You Have an Account? Create Account <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 53 58" height="58" width="53">
+        <path stroke-width="9" stroke="currentColor" d="M44.25 36.3612L17.25 51.9497C11.5833 55.2213 4.5 51.1318 4.50001 44.5885L4.50001 13.4115C4.50001 6.86824 11.5833 2.77868 17.25 6.05033L44.25 21.6388C49.9167 24.9104 49.9167 33.0896 44.25 36.3612Z"></path>
+        </svg></span>
+          
+        </button></center>
+
+    </form>
+  </div>
+  <br><br><br>
+  <div class="login-box" id="signup">
+ 
+    <form>
+      <div class="user-box">
+        <input type="text" name="" id="user_name" required>
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="email" id="signupemail" name=""  required>
+        <label>Email</label>
+      </div><center>
+      <div class="user-box">
+        <input type="password" id="signuppassword"  name="" required>
+        <label>Password</label>
+      </div><center>
+      <a href="#" id="signupBtn">
+             Sign up
+         <span></span>
+      </a>
+      <button class="button" id="goToSignIn">
+        <div class="button-overlay"></div>
+        <span>Already Have an Account? Login <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 53 58" height="58" width="53">
+      <path stroke-width="9" stroke="currentColor" d="M44.25 36.3612L17.25 51.9497C11.5833 55.2213 4.5 51.1318 4.50001 44.5885L4.50001 13.4115C4.50001 6.86824 11.5833 2.77868 17.25 6.05033L44.25 21.6388C49.9167 24.9104 49.9167 33.0896 44.25 36.3612Z"></path>
+      </svg></span>
+        
+      </button>
+      <!-- <button><span>Already Have an Account?</span>Login</button> -->
+    </center>
+    </form>
+  </div>
+
+  <script type="module" src="app.js">
+    
+  </script>
+</body>
+</html>

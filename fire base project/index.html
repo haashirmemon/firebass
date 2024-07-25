@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      button {
+        width: 150px;
+        height: 70px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #00000080;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #5f2b2b80;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+#btn:hover,
+:focus {
+  color: #000000;
+  background: #a17f7f;
+  border: 2px solid #657582;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #495258, 0 0 50px #0c1720,
+    0 0 100px #495661;
+}
+
+
+      /* body  {
+        width: 100%;
+  height: 100%;
+  background-color: #111111;
+  background-image: linear-gradient(
+    32deg,
+    rgba(8, 8, 8, 0.74) 30px,
+    transparent
+  );
+  background-size: 60px 60px;
+  background-position: -5px -5px;
+} */
+.container {
+  width: 100%;
+  height: 100%;
+  /* Add your background pattern here */
+  /* background-color: lightblue; */
+  background-image: radial-gradient(black 55%, #0000),
+    /* radial-gradient(black 55%, #0000), */
+      linear-gradient(
+        135deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        indigo,
+        deeppink
+      );
+  background-size: 100% 0.5%, contain;
+  /* background-blend-mode: hard-light; */
+  /* background-position: 0 0, 1em 1em, 0 0; */
+}
+/* Yoinked from CodePen, but improved the animation
+so that it is smooth among other more minor things */
+
+.codepen-button {
+  display: block;
+  cursor: pointer;
+  color: white;
+  margin: 0 auto;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 3px;
+  isolation: isolate;
+}
+
+.codepen-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+  background-size: 25% 100%;
+  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
+  animation-play-state: paused;
+  translate: -5% 0%;
+  transition: translate 0.25s ease-out;
+}
+
+.codepen-button:hover::before {
+  animation-play-state: running;
+  transition-duration: 0.75s;
+  translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.codepen-button span {
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background: #000;
+  border-radius: 3px;
+  height: 100%;
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+}
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  width: 50px;
+  transition-duration: .3s;
+  transform: translateY(60%);
+}
+
+.button::before {
+  position: absolute;
+  top: -20px;
+  content: "Delete";
+  color: white;
+  transition-duration: .3s;
+  font-size: 2px;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}
+    </style>
+  </head>
+  <body class="container">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 text-white">
+      <div
+        class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
+      >
+        <a
+          href="https://flowbite.com"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="./download.jpeg"
+            style="height: 50px;"
+         
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-300"
+            style="color: rgb(65, 224, 17);"
+            >Food application</span
+          >
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+          <a
+            href="tel:5541251234"
+            class="text-sm text-blue-500 dark:text-white hover:underline"
+            >0336-********</a
+          >
+          <a
+            href="/auth/createaccount.html"
+            id="login_btn"
+            class="text-sm text-blue-600 dark:text-blue-500 hover:underline"
+            >Login</a
+          >
+         <button id="btn"> <a
+            href="./auth/createaccount.html"
+            id="user_info"
+            class="text-sm text-blue-600 dark:text-blue-500 hover:underline"
+          ></a></button>
+          <a style="display: none"
+          class="text-sm text-blue-600 dark:text-blue-500 hover:underline"
+          >
+           <a class="codepen-button" href="./create recipe/recipe.html"><span>create recipe</span></a></a
+          ></a>
+           
+           
+
+<button class="Btn" id="logout_btn">
+  
+  <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+  
+  <div class="text" style="margin-top: -25px;">Logout</div>
+</button>
+
+        </div>
+      </div>
+    </nav>
+    <!-- <nav class="bg-gray-50 dark:bg-gray-700">
+      <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex items-center">
+          <ul
+            class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm"
+          >
+            <li>
+              <a
+                href="#"
+                class="text-gray-900 dark:text-white hover:underline"
+                aria-current="page"
+                >All Foods</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-900 dark:text-white hover:underline"
+                >My Foods</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+    <div class="flex items-center justify-center w-full center my-3">
+      <input class="w-1/2 bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="search" id="search-input"  placeholder="Search Title" />
+      
+  
+  <select id="priceSelect" class="border rounded p-3 text-lg ml-1 text-gray-900" >
+<option value="0-2000">Select price range</option>
+  <option value="0-500">$0 - $500</option>
+  <option value="500-800">$500 - $800</option>
+  <option value="800-1200">$800 - $1200</option>
+  <option value="1200-1500">$1200 - $1500</option>
+  <option value="1500-2000">$1500 - $2000</option>
+  </select>
+  <!-- <input type="search" id="search-input" placeholder="Search..."> -->
+<!-- <input type="number" id="price-min" placeholder="Min price">
+<input type="number" id="price-max" placeholder="Max price"> -->
+
+    </div>
+    <div id="cards_container" style="display: flex;  flex-wrap: wrap;gap: 20px;">
+
+
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
