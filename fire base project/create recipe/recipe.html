@@ -10,57 +10,94 @@
   </head>
   <body>
     <h1 style="font-size: 30px; color: rgb(0, 0, 0); font-weight: bold;">Create Recipe</h1>
+<center>  <form id="submit_food_form">
+  <div class="searchBox">
 
-    <form id="submit_food_form">
-      <label class="custom-file-upload">
-        <div class="icon">
-            <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" fill=""></path>
-                </g>
-            </svg>
-        </div>
-        <div class="text">Click to upload image</div>
-        <input id="file" type="file">
-    </label>
+    <input class="searchInput" type="file" name="" placeholder="enter image">
+   
+</div>
 
-      <br />
-      <label>
-        Food Name
-        <input type="text" value="" required name="" id="" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
-      </label>
-      <br />
+<div class="searchBox">
 
-      <label>
-        Location
-        <input type="url" value="" required name="" id="" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
-      </label>
-      <br />
+  <input class="searchInput" type="text" name="" placeholder=" enter food name ">
 
-      <label>
-        Price
-        <input type="number" value="" required name="" id="" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
-      </label>
-      <br />
-      <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create</button>
-      <!-- <button type="submit" ><a class="a" href="#" id="signupBtn">
-       Create
-    <span></span></button> -->
- </a>
-      
-        <!-- <button type="submit"> <div class="scene">
-          <div class="cube" style="margin-left: 345px;">
-            <button type="submit">
-            <span class="side top">Recipe</span>
-            <span class="side front">Create</span>
-         
-        </div>
-        </div> </button></center><br><br> -->
-    </form>
+</div>
 
+
+<div class="searchBox">
+
+  <input class="searchInput" type="url" name="" placeholder="enter location">
+
+</div>
+
+<div class="searchBox">
+
+<input class="searchInput" type="number" name="" placeholder="enter price">
+
+</div>
+<button class="animated-button" type="submit">
+  <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+  <span class="text">create recipe</span>
+  <span class="circle"></span>
+  <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+</button>
+
+ 
+</div>
+</div> </button></center><br><br> 
+
+</form>
+
+</center>
+  
     <script src="app.js" type="module"></script>
   </body>
 
 </html>
+<!-- <label class="custom-file-upload">
+  <div class="icon">
+      <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" fill=""></path>
+          </g>
+      </svg>
+  </div>
+  <div class="text">Click to upload image</div>
+  <input id="file" type="file">
+</label>
+
+<br />
+<label>
+  Food Name
+  <input type="text" value="" required name="" id="" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</label>
+<br />
+
+<label>
+  Location
+  <input type="url" value="" required name="" id="" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</label>
+<br />
+
+<label>
+  Price
+  <input type="number" value="" required name="" id="" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+</label>
+<br />
+<button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create</button>
+<!-- <button type="submit" ><a class="a" href="#" id="signupBtn">
+ Create
+<span></span></button> -->
+<!-- </a> -->
+
+  

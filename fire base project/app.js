@@ -12,7 +12,7 @@ import {
   db,
   deleteDoc,
   storage,
-} from "./utils/utils.js";
+} from "../utils/utils.js";
 // console.log(storage);
 
 const cards_container = document.getElementById("cards_container");
@@ -25,17 +25,17 @@ const priceSelect = document.getElementById("priceSelect");
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
+    logout_btn.style.display = "block";
+    create_recipe_btn.style.display = "block";
     login_btn.style.display = "none";
     user_info.style.display = "block";
     user_info.innerText = user.email;
-    create_recipe_btn.style.display = "block";
-    logout_btn.style.display = "block";
   } else {
+    create_recipe_btn.style.display = "none";
+    logout_btn.style.display = "none";
     login_btn.style.display = "block";
     user_info.style.display = "none";
     user_info.innerText = "";
-    create_recipe_btn.style.display = "none";
-    logout_btn.style.display = "none";
   }
 });
 
@@ -44,6 +44,7 @@ logout_btn.addEventListener("click", () => {
     console.log("User signed out");
   });
 });
+console.log(logout_btn);
 
 let foodData = [];
 
@@ -65,72 +66,87 @@ function displayFoods(data) {
     const {id, image, foodName, foodPrice, foodLocation, addByEmail } = food;
 
     const card = `
-    <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-200 dark:bg-gray-800 dark:hover:bg-gray-900">
- 
-  <div class="flex flex-col justify-between p-4 leading-normal">
-   <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-98 md:rounded-none md:rounded-s-lg" src="${image}" alt="">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white-900 dark:text-white">${foodName}</h5>
-      <p class="mb-3 font-normal text-gray-200 dark:text-white-900"> FOOD LOCATION :${foodLocation}.</p>
-      <p class="mb-3 font-normal text-gray-200 dark:text-white-900">Added By email :${addByEmail}</p>
-      <p class="mb-3 font-normal text-gray-200 dark:text-white-900">Added By price: ${foodPrice}</p>
-    
+    <div id="food-${id}" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="height: auto;">
+  <a href="#">
+      <img class="rounded-t-lg" src="${image}" alt="" />
+  </a>
+  <div class="p-5">
+      <a href="#">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${foodName}</h5>
+      </a>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">${foodLocation}.</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">${addByEmail}.</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">$${foodPrice}.</p>
 
-        
-      <button     id="like-${food.id}" class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-lime-500
-        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-lime-500 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">likeme</button>
-      "
+      
+      
 
-        <br>
-             <button     id="dislike-${food.id}" class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-lime-500
-        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-lime-500 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">dislike</button> 
-        <br>
-        
-        <button     id="delete-${id}"  class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-lime-500
+      <button     id="delete-${id}"  class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-lime-500
         before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-lime-500 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700">delete</button>
   
   </div>
-       
-      "
-</a>
+</div>
+    
       `;
+    cards_container.innerHTML+= card; })}
+  // Function to set up delete functionality for a specific item
+// function setupDeleteButton(id) {
+//   const deleteButton = document.getElementById(`food-${id}`);
+  
+//   if (deleteButton) {
+//     deleteButton.addEventListener('click', async function () {
+//       try {
+//         // Delete the document from Firestore
+//         await deleteDoc(doc(db, 'foods', id));
+//         console.log('Document successfully deleted!');
 
-    cards_container.innerHTML+= card;
-    const deleteButton = document.getElementById(`delete-${id}`);
-    deleteButton.addEventListener('click', async function () {
-      try {
-        await deleteDoc(doc(db, 'foods', id));
-        console.log('Document successfully deleted!');
-       
-        document.getElementById(`food-${id}`).parentNode.remove();
-      } catch (error) {
-        console.error('Error removing document: ', error);
-      }
+//         // Remove the corresponding DOM element (the card)
+//         const foodElement = document.getElementById(`food-${id}`);
+//         if (foodElement) {
+//           foodElement.remove();
+//         }
+//       } catch (error) {
+//         console.error('Error removing document: ', error);
+//       }
+//     });
+//   } else {
+//     console.error('Delete button not found for id:', `food-${id}`);
+//   }
+// }
+// setupDeleteButton(`food-${id}`);
+// Example usage: setting up delete functionality for a specific ID
 
-    const likeButton = document.getElementById(`like-${food.id}`);
-    const dislikeButton = document.getElementById(`dislike-${food.id}`);
-    // const deleteButton = document.getElementById(`delete-${food.id}`);
+ 
+   // Function to set up delete functionality for a specific item
 
-    likeButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      likeButton.style.backgroundColor = "blue";
-      likeButton.style.color = "red";
-      dislikeButton.style.backgroundColor = 'blue';
-      dislikeButton.style.color = 'red';
-    });
+// Example usage: setting up delete functionality for a specific ID
 
-    dislikeButton.addEventListener('click', function () {
-      likeButton.style.backgroundColor = "red";
-      likeButton.style.color = "blue";
-      dislikeButton.style.backgroundColor = 'red';
-      dislikeButton.style.color = 'blue';
-    });
+    
+    // const likeButton = document.getElementById(`like-${food.id}`);
+    // const dislikeButton = document.getElementById(`dislike-${food.id}`);
+
+
+    // likeButton.addEventListener("click", (e) => {
+    //   e.preventDefault();
+    //   likeButton.style.backgroundColor = "blue";
+    //   likeButton.style.color = "red";
+    //   dislikeButton.style.backgroundColor = 'blue';
+    //   dislikeButton.style.color = 'red';
+    // });
+
+    // dislikeButton.addEventListener('click', function () {
+    //   likeButton.style.backgroundColor = "red";
+    //   likeButton.style.color = "blue";
+    //   dislikeButton.style.backgroundColor = 'red';
+    //   dislikeButton.style.color = 'blue';
+    // });
 
     
     
-  });
-})}
+//   });
+// })}
 // Example usage
-// getFoods().then(displayFoods);
+getFoods().then(displayFoods);
 
 
 
